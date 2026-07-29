@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#a0a0ff" />
+  <title>빗시 노래책 관리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .manager-shell{width:min(1000px,calc(100% - 24px));margin:0 auto;padding:30px 0 70px}.manager-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}.manager-head a{text-decoration:none}.manager-card{padding:24px;border:1px solid rgba(117,112,232,.12);border-radius:28px;background:rgba(255,255,255,.9);box-shadow:var(--shadow)}.manager-note{color:var(--muted);line-height:1.65}.song-form{display:grid;grid-template-columns:2fr 1.3fr 1fr auto auto auto;gap:10px;margin:22px 0}.song-form input,.song-form select{height:46px;padding:0 12px;border:1px solid var(--line);border-radius:13px;background:#fff}.check-wrap{display:flex;align-items:center;gap:7px;white-space:nowrap}.manager-table{width:100%;border-collapse:collapse}.manager-table th,.manager-table td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}.manager-table th{color:var(--muted);font-size:13px}.manager-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.danger-button{min-height:46px;padding:0 16px;border:1px solid #f0caca;border-radius:14px;background:#fff;color:#b34d4d;font-weight:800;cursor:pointer}.small-delete{border:0;background:transparent;color:#b34d4d;cursor:pointer;font-weight:800}.count-label{color:var(--point-deep);font-weight:800}.file-label{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border:1px solid var(--line);border-radius:14px;background:white;font-weight:800;cursor:pointer}.file-label input{display:none}@media(max-width:760px){.song-form{grid-template-columns:1fr}.manager-table thead{display:none}.manager-table,.manager-table tbody,.manager-table tr,.manager-table td{display:block}.manager-table tr{padding:12px 0;border-bottom:1px solid var(--line)}.manager-table td{padding:4px 0;border:0}.manager-head{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="manager-shell">
+    <div class="manager-head">
+      <div><span class="section-kicker">SONG MANAGER</span><h1 style="font-size:clamp(34px,7vw,54px);margin:8px 0 0">노래 목록 관리</h1></div>
+      <a class="secondary-button" href="index.html" style="display:inline-flex;align-items:center">노래책 보기</a>
+    </div>
+    <section class="manager-card">
+      <p class="manager-note">여기서 수정한 내용은 이 브라우저에 임시 저장돼요. 작업이 끝나면 <strong>songs.js 내려받기</strong>를 눌러 기존 파일과 교체하세요.</p>
+      <form id="songForm" class="song-form">
+        <input id="title" required placeholder="곡 제목" />
+        <input id="artist" required placeholder="가수" />
+        <input id="genre" required placeholder="장르 (예: J-POP)" />
+        <label class="check-wrap"><input id="recommended" type="checkbox" /> 추천곡</label>
+        <label class="check-wrap"><input id="isNew" type="checkbox" /> 신곡</label>
+        <button class="primary-button" type="submit">추가</button>
+      </form>
+      <p class="count-label">현재 <span id="managerCount">0</span>곡</p>
+      <div style="overflow-x:auto"><table class="manager-table"><thead><tr><th>곡</th><th>가수</th><th>장르</th><th>추천</th><th>신곡</th><th></th></tr></thead><tbody id="managerBody"></tbody></table></div>
+      <div class="manager-actions">
+        <button id="downloadJs" class="primary-button" type="button">songs.js 내려받기</button>
+        <button id="downloadCsv" class="secondary-button" type="button">CSV 백업</button>
+        <label class="file-label">CSV 불러오기<input id="csvInput" type="file" accept=".csv,text/csv" /></label>
+        <button id="resetSongs" class="danger-button" type="button">처음 목록으로 되돌리기</button>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="songs.js"></script>
+  <script src="manage.js"></script>
+</body>
+</html>

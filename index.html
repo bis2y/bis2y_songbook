@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#a0a0ff" />
+  <meta name="description" content="빗시의 노래책 — 곡명과 가수로 검색하고 치지직 신청 문구를 복사해 보세요." />
+  <title>빗시 노래책 | BIS2Y SONG BOOK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sparkle-field" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></div>
+  <div class="page-shell">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="hero">
+      <nav class="topbar" aria-label="주요 메뉴">
+        <a class="brand" href="#top" aria-label="빗시 노래책 홈">
+          <span class="brand-mark">✦</span>
+          <span>BIS2Y</span>
+        </a>
+        <a class="chzzk-link" href="#guide">신청 방법</a>
+      </nav>
+
+      <div class="hero-copy" id="top">
+        <span class="eyebrow">OFFICIAL SONG BOOK</span>
+        <h1>BIS2Y SONG BOOK</h1>
+        <p>곡명이나 가수를 검색하거나, 원하는 장르에서 신청곡을 골라보세요.</p>
+      </div>
+
+      <section class="guide-card" id="guide" aria-labelledby="guide-title">
+        <div style="width:100%">
+          <p class="guide-label" id="guide-title">✦ 노래 신청 안내 ✦</p>
+          <div class="guide-grid">
+            <article class="price-card">
+              <span class="price-title">✦ 일반 신청곡</span>
+              <strong>3,000 치즈</strong>
+              <p>노래 목록에서 신청 문구를 복사한 뒤 치지직 후원 메시지에 붙여 넣어주세요.</p>
+            </article>
+            <article class="price-card">
+              <span class="price-title">✦ 원하는 노래 연습해오기</span>
+              <strong>30,000 치즈</strong>
+              <p>언어 이슈 및 높은 음정 등으로 너무 어려운 노래는 제외될 수 있습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="new-section" id="newSongsSection" aria-labelledby="new-songs-title">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">✦ NEW SONGS ✦</span>
+            <h2 id="new-songs-title">신곡 추가</h2>
+            <p>최근 새로 추가된 노래를 한 번 더 모아봤어요 ✦</p>
+          </div>
+          <div class="stats-row"><span>전체 <strong id="totalSongCount">0</strong>곡</span><span>신곡 <strong id="newSongCount">0</strong>곡</span></div>
+        </div>
+        <div id="newSongGrid" class="new-grid"></div>
+      </section>
+
+      <section class="control-panel" aria-label="노래 검색 및 필터">
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="곡명 또는 가수 검색" autocomplete="off" />
+          <button id="clearSearch" class="icon-button" type="button" aria-label="검색어 지우기">×</button>
+        </label>
+
+        <div class="filter-row">
+          <label class="select-wrap">
+            <span>장르</span>
+            <select id="genreSelect">
+              <option value="all">전체 장르</option>
+            </select>
+          </label>
+
+          <button id="recommendToggle" class="filter-button" type="button" aria-pressed="false">
+            <span class="button-star">✦</span> 추천곡만 보기
+          </button>
+
+          <button id="resetFilters" class="text-button" type="button">조건 초기화</button>
+        </div>
+      </section>
+
+      <section class="random-panel" aria-labelledby="random-title">
+        <div>
+          <span class="section-kicker">RANDOM PICK</span>
+          <h2 id="random-title">랜덤 신청곡</h2>
+          <p>현재 검색·장르 조건 안에서 중복 없이 뽑아요.</p>
+        </div>
+        <div class="random-actions">
+          <div class="stepper" aria-label="랜덤 곡 수 설정">
+            <button id="decreaseCount" type="button" aria-label="곡 수 줄이기">−</button>
+            <input id="randomCount" type="number" value="3" min="1" max="10" aria-label="랜덤으로 뽑을 곡 수" />
+            <button id="increaseCount" type="button" aria-label="곡 수 늘리기">＋</button>
+          </div>
+          <button id="randomButton" class="primary-button" type="button">3곡 랜덤 뽑기</button>
+        </div>
+      </section>
+
+      <section class="songs-section" aria-labelledby="song-list-title">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">SONG LIST</span>
+            <h2 id="song-list-title">노래 목록</h2>
+            <p>곡을 누르면 치지직 신청 문구를 바로 복사할 수 있어요.</p>
+          </div>
+          <div class="result-count"><strong id="songCount">0</strong>곡</div>
+        </div>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <div>♬</div>
+          <h3>조건에 맞는 노래가 없어요</h3>
+          <p>검색어나 장르를 바꿔보세요.</p>
+        </div>
+
+        <div id="songGrid" class="song-grid" aria-live="polite"></div>
+        <button id="loadMore" class="load-more" type="button">더 보기</button>
+      </section>
+
+      <section id="randomResultSection" class="random-results" aria-labelledby="random-result-title" hidden>
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">YOUR PICKS</span>
+            <h2 id="random-result-title">랜덤 신청곡</h2>
+            <p>중복 없이 뽑았어요.</p>
+          </div>
+          <div class="result-actions">
+            <button id="rerollButton" class="secondary-button" type="button">다시 뽑기</button>
+            <button id="copyRandomButton" class="primary-button" type="button">치지직용 복사</button>
+          </div>
+        </div>
+        <div id="randomGrid" class="song-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for BIS2Y <span aria-hidden="true">✦</span></p>
+      <p class="footer-note">노래 목록은 <code>songs.js</code>에서 수정할 수 있어요.</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="songs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
