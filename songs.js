@@ -57,6 +57,13 @@ window.SONGS = [
     "isNew": false
   },
   {
+    "title": "밤양갱",
+    "artist": "비비",
+    "genre": "K-POP",
+    "recommended": false,
+    "isNew": false
+  },
+  {
     "title": "This love",
     "artist": "빅뱅",
     "genre": "랩",
@@ -67,6 +74,27 @@ window.SONGS = [
     "title": "그래도 나 사랑하지",
     "artist": "스웨덴세탁소",
     "genre": "인디",
+    "recommended": true,
+    "isNew": false
+  },
+  {
+    "title": "우르릉쾅쾅쾅",
+    "artist": "스텔라장",
+    "genre": "인디",
+    "recommended": false,
+    "isNew": true
+  },
+  {
+    "title": "내꺼 하는법",
+    "artist": "아야츠노 유니",
+    "genre": "K-POP",
+    "recommended": false,
+    "isNew": false
+  },
+  {
+    "title": "복숭아",
+    "artist": "아이유",
+    "genre": "발라드",
     "recommended": true,
     "isNew": false
   },
