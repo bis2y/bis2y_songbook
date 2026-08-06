@@ -15,6 +15,13 @@ window.SONGS = [
     "isNew": false
   },
   {
+    "title": "Mela!",
+    "artist": "녹황색사회",
+    "genre": "J-POP",
+    "recommended": false,
+    "isNew": true
+  },
+  {
     "title": "이러면 안 될 거 아는데 너 앞에만 서면 나락",
     "artist": "딘딘(Feat.10cm)",
     "genre": "랩",
