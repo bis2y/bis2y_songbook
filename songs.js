@@ -19,7 +19,7 @@ window.SONGS = [
     "artist": "녹황색사회",
     "genre": "J-POP",
     "recommended": false,
-    "isNew": true
+    "isNew": false
   },
   {
     "title": "shout baby",
@@ -83,13 +83,6 @@ window.SONGS = [
     "genre": "인디",
     "recommended": true,
     "isNew": false
-  },
-  {
-    "title": "우르릉쾅쾅쾅",
-    "artist": "스텔라장",
-    "genre": "인디",
-    "recommended": false,
-    "isNew": true
   },
   {
     "title": "마루노우치 새디스틱",
@@ -222,7 +215,7 @@ window.SONGS = [
     "artist": "한로로",
     "genre": "인디",
     "recommended": true,
-    "isNew": true
+    "isNew": false
   },
   {
     "title": "God knows...",
