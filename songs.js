@@ -22,6 +22,13 @@ window.SONGS = [
     "isNew": true
   },
   {
+    "title": "shout baby",
+    "artist": "녹황색사회",
+    "genre": "J-POP",
+    "recommended": false,
+    "isNew": true
+  },
+  {
     "title": "이러면 안 될 거 아는데 너 앞에만 서면 나락",
     "artist": "딘딘(Feat.10cm)",
     "genre": "랩",
@@ -85,6 +92,13 @@ window.SONGS = [
     "isNew": true
   },
   {
+    "title": "마루노우치 새디스틱",
+    "artist": "시이나 링고",
+    "genre": "J-POP",
+    "recommended": false,
+    "isNew": true
+  },
+  {
     "title": "내꺼 하는법",
     "artist": "아야츠노 유니",
     "genre": "K-POP",
@@ -104,6 +118,20 @@ window.SONGS = [
     "genre": "발라드",
     "recommended": false,
     "isNew": false
+  },
+  {
+    "title": "Coin",
+    "artist": "아이유",
+    "genre": "K-POP",
+    "recommended": false,
+    "isNew": true
+  },
+  {
+    "title": "소문의 낙원",
+    "artist": "악뮤",
+    "genre": "인디",
+    "recommended": false,
+    "isNew": true
   },
   {
     "title": "Pretender",
